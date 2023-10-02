@@ -31,12 +31,13 @@ type Input = {
 };
 
 const Home = () => {
-  const [checkHide, setCheckHide] = useState<boolean>(false);
   const [question, setQuestion] = useState(INITIAL_DATA);
   const [type, setType] = useState('');
   const [add, setAdd] = useState<string[]>([]);
-  const [addChild, setAddChild] = useState<{}[]>([]);
+  const [addChild, setAddChild] = useState<{}>([]);
   const [file, setFile] = useState<File | undefined>();
+  const [personalData, setPersonalData] = useState<{}>({});
+  const [checkHide, setCheckHide] = useState<boolean>(false);
 
   // .value?: string | number | readonly string[] | undefined
 
@@ -46,12 +47,25 @@ const Home = () => {
 
   async function fetchApiData() {
     const mockData = await fetch(
-      'http://127.0.0.1:4010/api/232.67651049266541/programs/reiciendis/application-form'
-    );
+      'http://127.0.0.1:4010/api/653.4567841173163/programs/qui/application-form'
+    ).then((res) => res?.json());
 
-    // setAddChild(mockData)
-    console.log(mockData);
+    setAddChild(mockData?.data?.attributes);
+    // const {
+    //   phoneNumber,
+    //   currentResidence,
+    //   dateOfBirth,
+    //   firstName,
+    //   lastName,
+    //   nationality,
+    //   gender,
+    //   emailId,
+    // } = mockData?.data?.attributes.personalInformation;
+    const { personalInformation } = mockData?.data?.attributes;
+    setPersonalData(personalInformation);
   }
+
+  console.log(personalData);
 
   // add: [],
   //     addChild: []
@@ -97,62 +111,6 @@ const Home = () => {
     const size = file.size / +bitSize;
     if (size >= 1) return;
 
-    const data = {
-      id: '497f6eca-6276-4993-bfeb-53cbbbba6f08',
-      type: 'applicationForm',
-      attributes: {
-        coverImage: file,
-        personalInformation: {
-          firstName: { internalUse: false, show: true },
-          lastName: { internalUse: false, show: true },
-          emailId: { internalUse: false, show: true },
-          phoneNumber: { internalUse: false, show: true },
-          nationality: { internalUse: false, show: true },
-          currentResidence: { internalUse: false, show: true },
-          idNumber: { internalUse: false, show: true },
-          dateOfBirth: { internalUse: false, show: true },
-          gender: { internalUse: false, show: true },
-          personalQuestions: [
-            {
-              id: '497f6eca-6276-4993-bfeb-53cbbbba6f08',
-              type: 'Paragraph',
-              question: 'string',
-              choices: ['string'],
-              maxChoice: 0,
-              disqualify: false,
-              other: false,
-            },
-          ],
-        },
-        profile: {
-          education: { mandatory: true, show: true },
-          experience: { mandatory: true, show: true },
-          resume: { mandatory: true, show: true },
-          profileQuestions: [
-            {
-              id: '497f6eca-6276-4993-bfeb-53cbbbba6f08',
-              type: 'Paragraph',
-              question: 'string',
-              choices: ['string'],
-              maxChoice: 0,
-              disqualify: false,
-              other: false,
-            },
-          ],
-        },
-        customisedQuestions: [
-          {
-            id: '497f6eca-6276-4993-bfeb-53cbbbba6f08',
-            type: 'Paragraph',
-            question: 'string',
-            choices: ['string'],
-            maxChoice: 0,
-            disqualify: false,
-            other: false,
-          },
-        ],
-      },
-    };
     try {
       const result = await fetch(
         'http://127.0.0.1:4010/api/65.12663432994489/programs/dolor/application-form',
@@ -209,6 +167,7 @@ const Home = () => {
       </div>
       <div className="personal__data ">
         <h6>Personal Information</h6>
+        {/* {addChild?.attributes?.} */}
         <form action="" className="personal_info">
           <input type="text" name="firstName" placeholder="First Name" />
           <input type="text" name="firstName" placeholder="Last Name" />
