@@ -1,0 +1,261 @@
+.imageUpload {
+  width: 520px;
+  height: 338px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0.1px 1px 6px,
+    rgba(0, 0, 0, 0.1) 0.1px 1px 6px;
+  margin: 40px;
+  border-radius: 15px;
+}
+
+.imageUpload > h6,
+.personal__data > h6,
+.profile > h6,
+.question > h6 {
+  background-color: #d0f7fa;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 15px 15px 0px 0px;
+  font-weight: 700;
+}
+
+.uploadIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px dotted #000;
+  margin: 20px;
+  width: 470px;
+  height: 210px;
+  border-radius: 5px;
+}
+
+.personal__data,
+.profile,
+.question {
+  width: 520px;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.02) 0.1px 1px 6px,
+    rgba(0, 0, 0, 0.1) 0.1px 1px 6px;
+  margin: 40px;
+  border-radius: 15px;
+}
+.coverImage {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.imageSize {
+  color: #979797;
+  font-size: 10px;
+}
+
+#file-input {
+  display: none;
+}
+
+#file-input-label {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4%;
+  cursor: pointer;
+}
+
+.personal_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal_info > input,
+.profile > input {
+  border: none;
+  margin-top: 20px;
+  padding: 10px;
+  width: 90%;
+  border-bottom: 2px solid #c4c4c4;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #000;
+  font-weight: 700;
+}
+::-moz-placeholder {
+  color: #000;
+  font-weight: 700;
+} /* firefox 19+ */
+:-ms-input-placeholder {
+  color: #000;
+  font-weight: 700;
+} /* ie */
+input:-moz-placeholder {
+  color: #000;
+  font-weight: 700;
+}
+
+.input_group {
+  display: flex;
+  /* justify-content: space-between; */
+  width: 90%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #c4c4c4;
+}
+
+#phone,
+.switch,
+#internal {
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+#phone {
+  /* width: 70%; */
+  display: flex;
+  flex: 0.5;
+}
+#internal {
+  margin-right: 9px;
+}
+label {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+}
+
+.group_control {
+  display: flex;
+  justify-content: space-between;
+  flex: 0.5;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #087b2f;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #087b2f;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.input_button {
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+.container {
+  /* width: 100%; */
+  margin-right: auto;
+  margin-left: auto;
+}
+.additional__info {
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
+input[type='text'],
+select {
+  border: 1px solid #000;
+  background: #fff;
+  width: 90%;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: inherit;
+  color: #b0babf;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
+input[type='text']::placeholder {
+  color: #b0babf;
+}
+
+label {
+  font-weight: 700;
+  margin-left: 5px;
+  /* margin-top: 20px; */
+}
+.buttonControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 88%;
+  margin-left: 5px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.delete {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: #a80000;
+}
+.save {
+  background-color: #087b2f;
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+}
